@@ -1,0 +1,51 @@
+name: 🐞 Bug report
+description: Report a problem with Free Repo Agent
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the details so we can reproduce and fix it fast.
+  - type: input
+    id: ext-version
+    attributes:
+      label: Extension version
+      placeholder: "e.g. 0.7.16"
+    validations:
+      required: true
+  - type: input
+    id: vscode-version
+    attributes:
+      label: VS Code version
+      placeholder: "e.g. 1.95.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what actually happened?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / errors
+      description: Paste any error from View → Output → "Repo Agent".
+      render: shell
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "macOS 14 / Windows 11 / Ubuntu 22.04"

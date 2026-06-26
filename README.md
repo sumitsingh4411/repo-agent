@@ -1,11 +1,29 @@
-# Free Repo Agent — AI Coding Agent for VS Code
+<div align="center">
 
-[![VS Code Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/SUMITKUMARSINGH.free-repo-agent?label=Marketplace&color=0b6cff)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/SUMITKUMARSINGH.free-repo-agent?color=0b6cff)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
-[![Rating](https://img.shields.io/visual-studio-marketplace/r/SUMITKUMARSINGH.free-repo-agent)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent&ssr=false#review-details)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<img src="https://raw.githubusercontent.com/sumitsingh4411/repo-agent/main/media/icon.png" width="112" alt="Free Repo Agent — free AI coding agent for VS Code" />
 
-> **A free AI coding agent and a free GitHub Copilot, Cursor & Claude alternative for VS Code** — repository-aware chat, autonomous code editing, terminal command running, and pre-commit code review, powered by **DeepSeek**.
+<h1>Free Repo Agent</h1>
+
+<h3>Free AI Coding Agent &amp; GitHub Copilot · Cursor · Claude Alternative for VS Code</h3>
+
+<p><b>Repo-aware chat</b> · <b>autonomous multi-file edits</b> · <b>terminal commands</b> · <b>vision (screenshot → code)</b> · <b>MCP plugins</b> · <b>staff-engineer code review</b> — powered by <b>DeepSeek</b>, with <b>no subscription</b>.</p>
+
+[![VS Code Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/SUMITKUMARSINGH.free-repo-agent?label=Marketplace&color=0b6cff&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/SUMITKUMARSINGH.free-repo-agent?color=0b6cff&label=installs)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/SUMITKUMARSINGH.free-repo-agent?color=ffb020)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent&ssr=false#review-details)
+[![Price: Free](https://img.shields.io/badge/price-free-2ea44f)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+<p>
+<a href="https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent"><b>⬇️ Install</b></a> &nbsp;·&nbsp;
+<a href="#-features"><b>✨ Features</b></a> &nbsp;·&nbsp;
+<a href="#-getting-started"><b>🚀 Get started</b></a> &nbsp;·&nbsp;
+<a href="https://github.com/sumitsingh4411/repo-agent/issues/new"><b>🐞 Report a bug</b></a>
+</p>
+
+</div>
+
+> **A free AI coding agent and a free GitHub Copilot, Cursor & Claude alternative for VS Code** — repository-aware chat, autonomous code editing, terminal command running, vision (screenshot → component), and pre-commit code review, powered by **DeepSeek**.
 
 **Free Repo Agent** is a free, open AI coding assistant that brings a Claude/Cursor/Cline-style **agent** experience into VS Code. It understands your whole repository, **writes and edits code** with inline **Keep / Undo** review, **runs terminal commands** with your approval, **auto-verifies its own work** (runs your typecheck/build and fixes errors before finishing), tracks progress on a **live Claude-style task checklist**, extends itself with **plugins (MCP)** — GitHub, web search, Postgres, filesystem and more — shows its **thinking**, supports **`@` file mentions**, **vision (paste a screenshot/UI → build the component)**, **image OCR** and **PDF uploads**, keeps **chat history/sessions**, and runs a **staff-engineer-grade pre-commit code review** of your staged git changes — all on the affordable DeepSeek API.
 
