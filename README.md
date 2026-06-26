@@ -22,10 +22,19 @@
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/SUMITKUMARSINGH.free-repo-agent?color=0b6cff&label=installs)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/SUMITKUMARSINGH.free-repo-agent?color=ffb020)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent&ssr=false#review-details)
 [![Price: Free](https://img.shields.io/badge/price-free-2ea44f)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
-[![Powered by DeepSeek](https://img.shields.io/badge/powered_by-DeepSeek-4d6bfe)](https://platform.deepseek.com)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/sumitsingh4411/repo-agent?style=social)](https://github.com/sumitsingh4411/repo-agent)
 
-### [⬇️ Install](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent) &nbsp;•&nbsp; [🚀 Get started](#-get-started-in-60-seconds) &nbsp;•&nbsp; [✨ Features](#-everything-it-does) &nbsp;•&nbsp; [🐞 Report a bug](https://github.com/sumitsingh4411/repo-agent/issues/new)
+<br/>
+
+[![Install in VS Code](https://img.shields.io/badge/⬇️_Install_in_VS_Code-0b6cff?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
+
+<sub>
+
+Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com) [![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org) [![DeepSeek](https://img.shields.io/badge/-DeepSeek-4d6bfe)](https://platform.deepseek.com) [![MCP](https://img.shields.io/badge/-MCP-1aa260)](https://modelcontextprotocol.io) [![MIT](https://img.shields.io/badge/-MIT-blue)](LICENSE)
+
+</sub>
+
+**[🚀 Get started](#-get-started-in-60-seconds) &nbsp;•&nbsp; [✨ Features](#-everything-it-does) &nbsp;•&nbsp; [🧩 Plugins](#-plugins-mcp--give-the-agent-superpowers) &nbsp;•&nbsp; [🐞 Report a bug](https://github.com/sumitsingh4411/repo-agent/issues/new)**
 
 </div>
 
@@ -292,6 +301,12 @@ A free alternative to **GitHub Copilot, Cursor, Claude, Codex, Cline, Continue, 
 ## 🐞 Report a bug / request a feature
 
 Found a bug or have an idea? **[Open an issue →](https://github.com/sumitsingh4411/repo-agent/issues/new)** — you'll get a guided **bug report** or **feature request** form. Please include your extension version, VS Code version, steps to reproduce, and any error from **View → Output → "Repo Agent"**. Browse existing reports on the **[Issues page](https://github.com/sumitsingh4411/repo-agent/issues)**.
+
+## ⭐ Star history
+
+<a href="https://star-history.com/#sumitsingh4411/repo-agent&Date">
+  <img src="https://api.star-history.com/svg?repos=sumitsingh4411/repo-agent&type=Date" width="600" alt="Star history chart" />
+</a>
 
 <div align="center">
 
