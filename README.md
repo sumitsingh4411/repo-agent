@@ -1,12 +1,20 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/sumitsingh4411/repo-agent/main/media/icon.png" width="120" alt="Free Repo Agent logo" />
+<img src="https://raw.githubusercontent.com/sumitsingh4411/repo-agent/main/media/icon.png" width="128" alt="Free Repo Agent — free AI coding agent for VS Code" />
 
 # Free Repo Agent
 
-### The free AI coding agent for VS Code
+### 🚀 The free AI coding agent for VS Code
 
-A no-subscription **GitHub Copilot · Cursor · Claude alternative** — repo-aware chat, an autonomous agent that **edits files & runs commands**, **vision (screenshot → component)**, **MCP plugins**, and **staff-engineer code review**. Powered by **DeepSeek** (bring your own key, pay-as-you-go).
+**A no-subscription [GitHub Copilot](#-vs-copilot-cursor--claude) · Cursor · Claude alternative** — repo-aware chat, an autonomous agent that **edits files & runs commands**, **vision (screenshot → component)**, **MCP plugins**, **project memory**, and **staff-engineer code review**. Powered by **DeepSeek** — bring your own key, pay only cents.
+
+<br/>
+
+![Agent mode](https://img.shields.io/badge/🤖_Autonomous_agent-0b6cff?style=for-the-badge)
+![Vision](https://img.shields.io/badge/👁️_Screenshot_→_code-7c4dff?style=for-the-badge)
+![MCP](https://img.shields.io/badge/🧩_MCP_plugins-1aa260?style=for-the-badge)
+![Review](https://img.shields.io/badge/🔍_AI_code_review-ff6d00?style=for-the-badge)
+![Memory](https://img.shields.io/badge/🧠_Project_memory-e91e63?style=for-the-badge)
 
 <br/>
 
@@ -14,108 +22,220 @@ A no-subscription **GitHub Copilot · Cursor · Claude alternative** — repo-aw
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/SUMITKUMARSINGH.free-repo-agent?color=0b6cff&label=installs)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/SUMITKUMARSINGH.free-repo-agent?color=ffb020)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent&ssr=false#review-details)
 [![Price: Free](https://img.shields.io/badge/price-free-2ea44f)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
+[![Powered by DeepSeek](https://img.shields.io/badge/powered_by-DeepSeek-4d6bfe)](https://platform.deepseek.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**[⬇️ Install](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent) · [🚀 Get started](#-getting-started) · [✨ Features](#-features) · [🐞 Report a bug](https://github.com/sumitsingh4411/repo-agent/issues/new)**
+### [⬇️ Install](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent) &nbsp;•&nbsp; [🚀 Get started](#-get-started-in-60-seconds) &nbsp;•&nbsp; [✨ Features](#-everything-it-does) &nbsp;•&nbsp; [🐞 Report a bug](https://github.com/sumitsingh4411/repo-agent/issues/new)
 
 </div>
 
 ---
 
-**Free Repo Agent** brings a Claude/Cursor/Cline-style **agent** into VS Code. It understands your whole repository, writes and edits code with inline **Keep / Undo**, runs terminal commands with your approval, **verifies its own work** (typecheck/build, then fixes errors), reads **images** (paste a UI → build the component), extends itself with **MCP plugins**, and runs a **staff-engineer pre-commit code review** — all on the affordable DeepSeek API, with **no monthly subscription**.
+> **Free Repo Agent** brings a Claude/Cursor/Cline-style **agent** into VS Code. It indexes your whole repository, writes and edits code with inline **Keep / Undo**, runs terminal commands with your approval, **verifies its own work** (typecheck/build → then fixes the errors), **reads images** (paste a UI → build the component), extends itself with **MCP plugins**, remembers your project, and runs a **staff-engineer pre-commit code review** — all on the affordable DeepSeek API with **no monthly subscription**.
 
-## Contents
+<div align="center">
 
-- [Features](#-features)
-- [Getting started](#-getting-started)
-- [How to use](#-how-to-use)
-- [Commands](#%EF%B8%8F-commands)
-- [Settings](#-settings)
-- [Privacy](#-privacy)
-- [Troubleshooting](#-troubleshooting)
-- [vs. Copilot, Cursor & Claude](#-vs-copilot-cursor--claude)
-- [FAQ](#-faq)
-- [Report a bug](#-report-a-bug--request-a-feature)
+**Looking for a free Copilot alternative · Cursor alternative · Claude / ChatGPT coding agent · Cline / Continue / Aider alternative?** This is the lightweight, bring-your-own-key one.
 
-## ✨ Features
+</div>
 
-| | Feature | What it does |
+## 📚 Contents
+
+<table>
+<tr>
+<td>
+
+- [⚡ Everything it does](#-everything-it-does)
+- [🚀 Get started in 60 seconds](#-get-started-in-60-seconds)
+- [🤖 Autonomous agent](#-autonomous-agent--self-verifying)
+- [👁️ Vision — image → code](#%EF%B8%8F-vision--paste-an-image-build-the-component)
+
+</td>
+<td>
+
+- [🧩 Plugins (MCP)](#-plugins-mcp--give-the-agent-superpowers)
+- [🧠 Project memory](#-project-memory--memorymd)
+- [🔍 Code review + custom rules](#-staff-engineer-code-review--your-own-rules)
+- [🧭 Repo indexing](#-repo-aware-indexing--retrieval)
+
+</td>
+<td>
+
+- [⚙️ Commands](#%EF%B8%8F-commands)
+- [🔧 Settings](#-settings)
+- [🆚 vs Copilot/Cursor/Claude](#-vs-copilot-cursor--claude)
+- [❓ FAQ](#-faq) · [🐞 Report a bug](#-report-a-bug--request-a-feature)
+
+</td>
+</tr>
+</table>
+
+## ⚡ Everything it does
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 💬 Repo-aware chat
+Ask anything about your codebase. It **indexes your project** and injects the most relevant files into every answer — no copy-pasting context.
+
+</td>
+<td width="50%" valign="top">
+
+### 🤖 Autonomous agent
+Give it a task — it reads files, **edits across many files**, and **runs commands** step by step. Every change is reviewed **inline** with **✓ Keep / ✗ Undo**.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### ✅ Auto-verify & self-fix
+After editing it runs your **typecheck/build**, reads the errors, and **fixes them before saying "done"** — no more code that doesn't compile.
+
+</td>
+<td width="50%" valign="top">
+
+### 👁️ Vision (image → code)
+Paste a **UI screenshot/mockup** and say *"build this component."* **Free by default** via Google Gemini (or local Ollama). Falls back to OCR for screenshots of code/errors.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🧩 Plugins (MCP)
+One-click tools the agent can use — **GitHub, web search, Postgres, Playwright, filesystem** & more — via the **Model Context Protocol**. Add any custom server.
+
+</td>
+<td width="50%" valign="top">
+
+### 🔍 Staff-engineer code review
+Reviews staged changes / files / branches, reads the **full files**, runs a **second audit pass**, and reports **Critical · Quality · Architecture · Testing**. Enforces **your own rules**.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🧠 Project memory
+A `memory.md` injected into **every** prompt so the agent always remembers your **stack, conventions, and rules**.
+
+</td>
+<td width="50%" valign="top">
+
+### ☑️ Live task checklist · 🧠 Thinking · 📎 Uploads
+A Claude-style **task checklist**, streamed **chain-of-thought**, `@`-mention any file, and attach **PDFs / images**.
+
+</td>
+</tr>
+</table>
+
+## 🚀 Get started in 60 seconds
+
+**1. Get a DeepSeek API key** → [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) — pay-as-you-go, a few dollars lasts a long time.
+
+**2. Add it to VS Code** → <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> → **`Agent: Set DeepSeek API Key`** (stored in VS Code SecretStorage, never in your repo).
+
+**3. Open chat** → press <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>, or click the **Repo Agent `</>` icon** to dock it beside your code — and start.
+
+> 💡 Type <kbd>/</kbd> in the chat for quick commands: **Plugins, Memory, Reindex, Auto-accept, Vision** and more.
+
+## 🤖 Autonomous agent — self-verifying
+
+Describe a task and watch it work end-to-end:
+
+> *"Add a `/health` route and a test for it, then run the tests."*
+
+1. 📖 Reads the relevant files (from the repo index).
+2. ✍️ Proposes edits **inline in your files** with green highlights and **✓ Keep / ✗ Undo**.
+3. ▶️ Asks to **Run** any terminal command in a visible *Repo Agent* terminal.
+4. ✅ **Auto-verifies** — runs your typecheck/build and **fixes errors** before finishing.
+5. ☑️ A **live checklist** ticks each step `pending → in-progress → ✓ done`. Hit **Stop** anytime.
+
+## 👁️ Vision — paste an image, build the component
+
+DeepSeek is text-only, so image understanding uses a **separate, free-by-default** vision model.
+
+```text
+/  →  👁️ Vision  →  choose a provider:
+     • Google Gemini — FREE (no credit card)   ← default
+     • Ollama / LM Studio — local, no key
+     • OpenRouter (free models) · OpenAI · Custom
+```
+
+Then **paste a screenshot/mockup** into the chat and ask *"build this as a React component."* The vision model turns the image into a precise implementation spec, and the agent builds the files. No key? Images fall back to **OCR** — perfect for screenshots of errors or code.
+
+## 🧩 Plugins (MCP) — give the agent superpowers
+
+Open the **🧩 Plugins** panel (or type <kbd>/</kbd> → **Plugins**) and add tools with one click. Built on the **Model Context Protocol** — the same plugin standard Claude uses — so the entire MCP ecosystem works here.
+
+| | Plugin | What the agent can do |
 |---|---|---|
-| 💬 | **Repo-aware chat** | Ask anything about your codebase — it indexes your project and injects the most relevant files into every answer. |
-| ✍️ | **Code generation** | Describe what you want; it generates files that match your architecture, with a diff preview before writing. |
-| 🤖 | **Autonomous agent** | Give it a task — it reads files, edits code, and runs commands step-by-step. Every change is reviewed **inline** with **Keep / Undo**. |
-| ✅ | **Auto-verify & self-fix** | After editing, it runs your typecheck/build, reads the errors, and **fixes them before finishing** — no "done" on code that doesn't compile. |
-| ☑️ | **Live task checklist** | A Claude-style checklist that ticks each step pending → in-progress → ✓ done as the agent works. |
-| 🔍 | **Staff-engineer code review** | Reviews staged changes / current file / branch — reads the **full files**, runs a **second audit pass** to drop false positives, reports **Critical · Quality · Architecture · Testing**. Add a `system-design.md` with your own rules and it enforces them. |
-| 🧩 | **Plugins (MCP)** | One-click tools the agent can use — GitHub, web search, Postgres, Playwright, filesystem and more — via the **Model Context Protocol**. Add any custom MCP server too. |
-| 👁️ | **Vision (image → code)** | Paste a UI screenshot/mockup and ask it to build the component. **Free by default** (Google Gemini free tier, or local Ollama — no key); falls back to OCR. |
-| 🧠 | **Project memory** | A `memory.md` injected into every prompt so the agent remembers your stack, conventions, and rules. |
-| 📎 | **@ mentions & uploads** | Reference any file with `@`, or attach files and **PDFs** (text extracted automatically). |
+| 📁 | **Filesystem** | Read/write/search files in a folder you allow |
+| 🐙 | **GitHub** | Search repos/issues, read files, open PRs & issues |
+| 🦊 | **GitLab** | Repos, issues, merge requests |
+| 🔎 | **Web Search** (Brave) | Search the web for up-to-date info |
+| 🦅 | **Tavily** | AI-grade web search & page extraction |
+| 🌐 | **Fetch** | Fetch a URL as clean text/markdown |
+| 🎭 | **Playwright** | Drive a real browser: click, fill, scrape, screenshot |
+| 🐘 | **Postgres** · 🗃️ **SQLite** | Query your databases |
+| 🪜 | **Sequential Thinking** | Structured step-by-step reasoning |
+| 📚 | **Context7** | Up-to-date docs & snippets for any library |
+| 🧠 | **Memory** | A knowledge graph the agent reads/writes across tasks |
+| 🗺️ | **Google Maps** · 💬 **Slack** | Places/directions · channels & messages |
 
-## 🚀 Getting started
+> ➕ **Add any custom MCP server** from the same panel — just give it a command + args. Keys are stored securely in VS Code SecretStorage.
 
-### 1. Get a DeepSeek API key
+## 🧠 Project memory — `memory.md`
 
-1. Go to **https://platform.deepseek.com/api_keys** and sign in (free account).
-2. Click **Create new API key** and **copy** it (starts with `sk-…`).
-3. DeepSeek is **pay-as-you-go** and very cheap — add a few dollars of credit under **Billing**.
+Type <kbd>/</kbd> → **Memory** to create a `memory.md` at your repo root. Its contents are injected into **every** chat and agent prompt, so the agent always remembers your project:
 
-### 2. Add your key to VS Code
+```markdown
+# Project Memory
 
-Open the Command Palette (`Cmd/Ctrl+Shift+P`) and run **`Agent: Set DeepSeek API Key`**. It's stored securely in VS Code **SecretStorage** — never written to your code or settings.
+## Project
+- Stack: React + TypeScript + Vite, Node/Express API, Postgres
+- Run: `npm run dev` · Tests: `npm test`
 
-> Alternative: set the `DEEPSEEK_API_KEY` environment variable before launching VS Code.
+## Conventions
+- 2-space indent, single quotes, named exports.
+- Always add types and a test. Never commit secrets or use `any`.
+```
 
-### 3. Start using it
+Delete the file to turn memory off. (You can also drop a `.agent.md` / `.claude.md` — it reads those too.)
 
-- Press **`Cmd/Ctrl+Shift+A`**, or
-- Click the **Repo Agent `</>` icon** in the editor's top-right to open chat **beside your code**, or
-- Click the **Repo Agent icon** in the Activity Bar.
+## 🔍 Staff-engineer code review + your own rules
 
-## 🧑‍💻 How to use
+Stage changes (`git add …`) → **Agent: Review Staged Changes** (also in the Source Control title bar). Findings appear in the **Problems** panel, the **Review Results** sidebar, and **inline** — each with **Fix with AI**, **Ignore**, and **Commit Anyway**.
 
-<details open>
-<summary><b>Chat & generate</b></summary>
+**Make it enforce YOUR standards.** Run **Agent: Create Review Guidelines** to scaffold a `system-design.md`. The reviewer reads it before every review and flags any change that breaks a rule — quoting the rule:
 
-Type a question and **Send**. Toggle **Generate code** to produce files (you get an **Apply** button with a diff preview first). Keep **Think** on to watch the model reason. Type `@` to reference a file; click **+** to attach text files or **PDFs**.
-</details>
+```markdown
+# Review Guidelines & System Design
 
-<details>
-<summary><b>Agent mode (autonomous)</b></summary>
+## Architecture
+- UI → services → data access. UI must not import data-access directly.
 
-Describe a task, e.g. *"Add a `/health` route and a test, then run the tests."* The agent:
-1. Reads relevant files and proposes edits — each shows **inline** with **✓ Keep / ✗ Undo**.
-2. Asks to **Run** any terminal command (in a visible Repo Agent terminal).
-3. Ends with **Keep all / Undo all**. Hit **Stop** anytime.
-</details>
+## Review rules
+- No `console.log` in committed code — use the logger.
+- Every new exported function ships with a test.
+- No secrets in source; read them from config/secret storage.
+```
 
-<details>
-<summary><b>Code review (with your own rules)</b></summary>
+## 🧭 Repo-aware indexing & retrieval
 
-Stage changes (`git add …`), then run **Agent: Review Staged Changes** (also in the Source Control title bar). Findings land in the **Problems** panel, the **Review Results** sidebar, and inline — each with **Fix with AI**, **Ignore**, **Commit Anyway**. Run **Agent: Create Review Guidelines** to scaffold a `system-design.md` of your team's rules that the reviewer enforces every time.
-</details>
-
-<details>
-<summary><b>Vision — paste an image, build the component (free)</b></summary>
-
-DeepSeek is text-only, so image understanding uses a separate vision model — **free by default** via **Google Gemini's free tier** (no credit card). Click the **👁️ Vision** entry (`/` menu) → choose **Gemini (free)**, **Ollama (local, no key)**, **OpenRouter**, **OpenAI**, or **Custom** → paste a screenshot and ask *"build this as a React component."* Off (or no key) → images fall back to OCR.
-</details>
-
-<details>
-<summary><b>Project memory & conventions</b></summary>
-
-Type `/` → **Memory** to create a `memory.md` whose contents are injected into **every** prompt (stack, conventions, "always/never" rules). You can also drop a `.agent.md` or `.claude.md` in your repo root — Repo Agent reads and follows it.
-</details>
+On first run, Repo Agent **indexes your repository** — symbols, structure, and optional AI per-file summaries — into a local cache (`.agent-cache/`). Every question then pulls in the **most relevant files automatically**, so answers fit *your* codebase. Re-run anytime with **Agent: Reindex Repository**, and tune what's indexed via `repoAgent.indexing.*` and how many files are injected via `repoAgent.retrieval.maxFiles`.
 
 ## ⚙️ Commands
 
-Open the Command Palette and type **"Agent:"**.
+<kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> → type **"Agent:"**
 
 | Command | Description |
 |---|---|
 | `Agent: Chat` / `Open Chat (beside editor)` | Open the chat panel |
 | `Agent: Generate Code` | Describe code to generate |
-| `Agent: Run Agent (autonomous)` | Run a task that can edit files & run commands |
+| `Agent: Run Agent (autonomous)` | Run a task that edits files & runs commands |
 | `Agent: Review Staged Changes` / `Review Current File` | Pre-commit / file review |
 | `Agent: Create Review Guidelines` | Scaffold a `system-design.md` of review rules |
 | `Agent: Edit Memory` | Edit the always-on `memory.md` |
@@ -126,7 +246,7 @@ Open the Command Palette and type **"Agent:"**.
 ## 🔧 Settings
 
 <details>
-<summary>All settings live under <code>repoAgent.*</code> (Settings → "Repo Agent")</summary>
+<summary>All settings live under <code>repoAgent.*</code> — click to expand</summary>
 
 | Setting | Default | Description |
 |---|---|---|
@@ -136,86 +256,51 @@ Open the Command Palette and type **"Agent:"**.
 | `deepseek.baseUrl` | `https://api.deepseek.com` | API base URL (OpenAI-compatible) |
 | `deepseek.maxTokens` | `4096` | Max tokens per response |
 | `vision.baseUrl` / `vision.model` | Gemini free | OpenAI-compatible vision endpoint |
-| `review.guidelinesFile` | `system-design.md` | Your custom review rules file |
+| `review.guidelinesFile` | `system-design.md` | Your custom review-rules file |
+| `review.deepAudit` | `true` | Second audit pass for fewer false positives |
 | `indexing.maxFiles` | `1500` | Index size cap |
+| `indexing.generateSummaries` | `true` | AI per-file summaries (set `false` for $0 indexing) |
 | `retrieval.maxFiles` | `8` | Relevant files injected per prompt |
+| `plugins.autoRun` | `true` | Run plugin tools without a confirm prompt |
 | `review.autoOnSave` | `false` | Auto-review files on save |
 
 </details>
 
-## 🔒 Privacy
+## 🆚 vs Copilot, Cursor & Claude
 
-- Your code is sent to **DeepSeek's API** only when you make a request, using the base URL you configure.
-- Your API key lives in VS Code **SecretStorage**, never in your repo.
-- The local index is cached under `.agent-cache/` (add it to `.gitignore`).
-
-## ❓ Troubleshooting
-
-<details>
-<summary>Common issues</summary>
-
-- **"Set your DeepSeek API key first."** → run **Agent: Set DeepSeek API Key**.
-- **`401 Unauthorized`** → key wrong/revoked or out of credit; check the DeepSeek dashboard + Billing.
-- **Vision failed** → open **View → Output → "Repo Agent"** for the real reason (bad key / wrong model / quota), then `/` → **Vision API key** to re-add it.
-- **No reasoning shown** → "Thinking" needs `deepseek-reasoner`; it doesn't apply to autonomous Agent mode.
-</details>
-
-## 🆚 vs. Copilot, Cursor & Claude
-
-| | Free Repo Agent | Copilot | Cursor | Claude / Cline |
+| | **Free Repo Agent** | Copilot | Cursor | Claude / Cline |
 |---|:---:|:---:|:---:|:---:|
-| Price | **Free** (BYO key) | Subscription | Subscription | Subscription / BYO |
-| Repo-aware agent (multi-file edits) | ✅ | ✅ | ✅ | ✅ |
+| **Price** | 🟢 **Free** (BYO key) | 💲 Subscription | 💲 Subscription | 💲 Sub / BYO |
+| Repo-aware multi-file agent | ✅ | ✅ | ✅ | ✅ |
 | Runs terminal commands | ✅ | ✅ | ✅ | ✅ |
-| Self-verifies (build/typecheck) | ✅ | — | partial | — |
-| Vision: screenshot → code | ✅ (free) | — | ✅ | ✅ |
-| MCP plugins | ✅ | — | ✅ | ✅ |
-| Pre-commit code review + custom rules | ✅ | partial | — | — |
+| **Self-verifies** (build/typecheck) | ✅ | — | ◐ | — |
+| **Vision:** screenshot → code | ✅ free | — | ✅ | ✅ |
+| **MCP plugins** | ✅ | — | ✅ | ✅ |
+| **Code review + custom rules** | ✅ | ◐ | — | — |
+| **Project memory file** | ✅ | ◐ | ◐ | ✅ |
 
 A free alternative to **GitHub Copilot, Cursor, Claude, Codex, Cline, Continue, Codeium, Windsurf, Tabnine, Cody, Aider & Roo Code** — a lightweight, bring-your-own-key agent that edits code, self-verifies, and reviews diffs inside VS Code.
 
 ## ❓ FAQ
 
-<details>
-<summary><b>Is it really free?</b></summary>
-
-Yes — the extension is free and open. You only pay DeepSeek's low pay-as-you-go API usage (your own key).
-</details>
-
-<details>
-<summary><b>Is it a good Copilot / Cursor / Claude / Cline alternative?</b></summary>
-
-Yes — repo-aware chat, an autonomous agent that edits files and runs commands, visible reasoning, vision, MCP plugins, and pre-commit code review — the same core workflow, no subscription.
-</details>
-
-<details>
-<summary><b>Does it fix its own mistakes?</b></summary>
-
-Yes — after editing it runs your typecheck/build, reads the errors, and fixes them before finishing.
-</details>
-
-<details>
-<summary><b>Can I add plugins / MCP servers?</b></summary>
-
-Yes — open the **🧩 Plugins** panel and add GitHub, web search, Postgres, Playwright, and more with one click, or any custom MCP server (needs Node/npx).
-</details>
-
-<details>
-<summary><b>Does my code leave my machine?</b></summary>
-
-Only the context needed for a request is sent to the DeepSeek API when you ask. Your key never leaves SecretStorage.
-</details>
+<details><summary><b>Is it really free?</b></summary><br/>Yes — the extension is free and open. You only pay DeepSeek's low pay-as-you-go API usage (your own key).</details>
+<details><summary><b>Is it a good Copilot / Cursor / Claude / Cline alternative?</b></summary><br/>Yes — repo-aware chat, an autonomous agent that edits files and runs commands, visible reasoning, vision, MCP plugins, and pre-commit code review — the same core workflow, no subscription.</details>
+<details><summary><b>Does it fix its own mistakes?</b></summary><br/>Yes — after editing it runs your typecheck/build, reads the errors, and fixes them before finishing.</details>
+<details><summary><b>Can I add plugins / MCP servers?</b></summary><br/>Yes — open the 🧩 Plugins panel and add GitHub, web search, Postgres, Playwright and more with one click, or any custom MCP server (needs Node/npx).</details>
+<details><summary><b>Does my code leave my machine?</b></summary><br/>Only the context needed for a request is sent to the DeepSeek API when you ask. Your key never leaves SecretStorage; the index is cached locally under <code>.agent-cache/</code>.</details>
 
 ## 🐞 Report a bug / request a feature
 
-Found a bug or have an idea? **[Open an issue →](https://github.com/sumitsingh4411/repo-agent/issues/new)** — you'll get a quick form for a **bug report** or **feature request**. Please include your extension version, VS Code version, steps to reproduce, and any error from **View → Output → "Repo Agent"**.
+Found a bug or have an idea? **[Open an issue →](https://github.com/sumitsingh4411/repo-agent/issues/new)** — you'll get a guided **bug report** or **feature request** form. Please include your extension version, VS Code version, steps to reproduce, and any error from **View → Output → "Repo Agent"**. Browse existing reports on the **[Issues page](https://github.com/sumitsingh4411/repo-agent/issues)**.
 
-Browse existing reports on the **[Issues page](https://github.com/sumitsingh4411/repo-agent/issues)**.
-
-## License
-
-MIT.
+<div align="center">
 
 ---
 
-<sub>Free AI coding agent · AI coding assistant · GitHub Copilot alternative · free Copilot · Cursor alternative · Claude alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · MCP · Model Context Protocol · MCP client · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
+### ⭐ If Free Repo Agent saves you time, [star it](https://github.com/sumitsingh4411/repo-agent) and [leave a review](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent&ssr=false#review-details) — it helps others find it.
+
+**MIT licensed**
+
+<sub>Free AI coding agent · AI coding assistant · GitHub Copilot alternative · free Copilot · Cursor alternative · Claude alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · MCP · Model Context Protocol · MCP client · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · project memory · repo indexing · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
+
+</div>
