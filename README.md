@@ -177,7 +177,9 @@ Then **paste a screenshot/mockup** into the chat and ask *"build this as a React
 
 ## 🧩 Plugins (MCP) — give the agent superpowers
 
-Open the **🧩 Plugins** panel (or type <kbd>/</kbd> → **Plugins**) and add tools with one click. Built on the **Model Context Protocol** — the same plugin standard Claude uses — so the entire MCP ecosystem works here.
+Open the **🧩 Plugins** panel (or type <kbd>/</kbd> → **Plugins**) and add tools with one click. Built on the **Model Context Protocol** — the same plugin standard Claude uses — so the entire MCP ecosystem works here. Add from the built-in catalog, **npm/GitHub**, a **custom command**, or a **remote URL**.
+
+📖 **[Full guide: how to use plugins →](docs/PLUGINS.md)**
 
 | | Plugin | What the agent can do |
 |---|---|---|
