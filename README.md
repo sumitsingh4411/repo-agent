@@ -6,15 +6,15 @@
 
 ### 🚀 The free AI coding agent for VS Code
 
-**A no-subscription [GitHub Copilot](#-vs-copilot-cursor--claude) · Cursor · Claude alternative** — repo-aware chat, an autonomous agent that **edits files & runs commands**, **vision (screenshot → component)**, **MCP plugins**, **project memory**, and **staff-engineer code review**. Powered by **DeepSeek** — bring your own key, pay only cents.
+**A no-subscription [GitHub Copilot](#-vs-copilot-cursor--claude) · Cursor · Claude alternative** — repo-aware chat, an autonomous agent that **edits files & runs commands**, a **DeepSeek V4 model switcher with thinking mode**, **vision (screenshot → component)**, **MCP plugins**, **project memory**, and **staff-engineer code review**. Bring your own key, pay only cents — or plug in **GPT / Claude / any model** via an OpenAI-compatible URL.
 
 <br/>
 
 ![Agent mode](https://img.shields.io/badge/🤖_Autonomous_agent-0b6cff?style=for-the-badge)
+![Models](https://img.shields.io/badge/🧠_DeepSeek_V4_+_thinking-4d6bfe?style=for-the-badge)
 ![Vision](https://img.shields.io/badge/👁️_Screenshot_→_code-7c4dff?style=for-the-badge)
 ![MCP](https://img.shields.io/badge/🧩_MCP_plugins-1aa260?style=for-the-badge)
 ![Review](https://img.shields.io/badge/🔍_AI_code_review-ff6d00?style=for-the-badge)
-![Memory](https://img.shields.io/badge/🧠_Project_memory-e91e63?style=for-the-badge)
 
 <br/>
 
@@ -40,7 +40,7 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 
 ---
 
-> **Free Repo Agent** brings a Claude/Cursor/Cline-style **agent** into VS Code. It indexes your whole repository, writes and edits code with inline **Keep / Undo**, runs terminal commands with your approval, **verifies its own work** (typecheck/build → then fixes the errors), **reads images** (paste a UI → build the component), extends itself with **MCP plugins**, remembers your project, and runs a **staff-engineer pre-commit code review** — all on the affordable DeepSeek API with **no monthly subscription**.
+> **Free Repo Agent** brings a Claude/Cursor/Cline-style **agent** into VS Code. It indexes your whole repository, writes and edits code with inline **Keep / Undo**, runs terminal commands with your approval, **verifies its own work** (typecheck/build → then fixes the errors), lets you **switch models** (DeepSeek **V4 Pro / V4 Flash** with **thinking mode**, or any OpenAI-compatible model), tunes **effort** (fast → max reasoning), **reads images** (paste a UI → build the component), extends itself with **MCP plugins (local & remote)**, learns your codebase, remembers your project, and runs a **staff-engineer pre-commit code review** — all on the affordable DeepSeek API with **no monthly subscription**.
 
 <div align="center">
 
@@ -56,7 +56,8 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 
 - [⚡ Everything it does](#-everything-it-does)
 - [🚀 Get started in 60 seconds](#-get-started-in-60-seconds)
-- [🤖 Autonomous agent](#-autonomous-agent--self-verifying)
+- [🧠 Models & thinking mode](#-models--thinking-mode--generate-the-best-code)
+- [📖 Learn this codebase](#-learn-this-codebase)
 - [👁️ Vision — image → code](#%EF%B8%8F-vision--paste-an-image-build-the-component)
 
 </td>
@@ -127,14 +128,42 @@ Reviews staged changes / files / branches, reads the **full files**, runs a **se
 <tr>
 <td width="50%" valign="top">
 
-### 🧠 Project memory
-A `memory.md` injected into **every** prompt so the agent always remembers your **stack, conventions, and rules**.
+### 🧠 Model switcher + thinking mode
+Switch models from the footer, Claude-style: **DeepSeek V4 Pro / V4 Flash** with **thinking mode** (deep reasoning that works *with* tool calls), or point at **OpenAI / OpenRouter / Gemini** for GPT/Claude/Llama.
 
 </td>
 <td width="50%" valign="top">
 
-### ☑️ Live task checklist · 🧠 Thinking · 📎 Uploads
-A Claude-style **task checklist**, streamed **chain-of-thought**, `@`-mention any file, and attach **PDFs / images**.
+### ⚡ Effort control
+A dial from **fast & cheap → max reasoning**. Higher effort = more tool steps, longer answers, more context, and deeper V4 thinking — you decide speed vs. quality per task.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🧩 Plugins (MCP) — local & remote
+One-click tools — **GitHub, web search, Postgres, Playwright, filesystem** & 20+ more — via the **Model Context Protocol**. Install from **npm/GitHub**, a custom command, or a **remote URL**.
+
+</td>
+<td width="50%" valign="top">
+
+### 🔍 Staff-engineer code review
+Reviews staged changes / files / branches, reads the **full files**, runs a **second audit pass**, and reports **Critical · Quality · Architecture · Testing**. Enforces **your own rules**.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📖 Learn this codebase + 🧠 memory
+One click generates a **knowledge brief** of your project (architecture, conventions, key files) that's injected into every prompt — plus a `memory.md` for your own always-on rules.
+
+</td>
+<td width="50%" valign="top">
+
+### 👍 Learns from your feedback
+Every reply has **Copy · 👍 · 👎**. A 👎 saves *what was wrong* as a rule the agent follows from then on — and offers a one-click **Retry**. Works with **no folder open** too.
 
 </td>
 </tr>
@@ -161,6 +190,23 @@ Describe a task and watch it work end-to-end:
 3. ▶️ Asks to **Run** any terminal command in a visible *Repo Agent* terminal.
 4. ✅ **Auto-verifies** — runs your typecheck/build and **fixes errors** before finishing.
 5. ☑️ A **live checklist** ticks each step `pending → in-progress → ✓ done`. Hit **Stop** anytime.
+
+## 🧠 Models & thinking mode — generate the best code
+
+Switch the model from the **🧠 chip in the chat footer** (or the ⚙︎ Options menu), just like Claude:
+
+| Model | Best for |
+|---|---|
+| **DeepSeek V4 Pro** (`deepseek-v4-pro`) | Hardest code & reasoning — top quality |
+| **DeepSeek V4 Flash** (`deepseek-v4-flash`) | Fast & affordable, 1M context — the default |
+| **R1 / V3** (`deepseek-reasoner` / `deepseek-chat`) | Legacy models |
+
+- **Thinking mode** — on the V4 models the agent uses DeepSeek's built-in **deep reasoning that works *with* tool calls**, so it thinks before it edits. It's wired to the **⚡ Effort** dial: off at *Low* (fast/cheap), then *low → high → max* reasoning at *Medium → High → Max*.
+- **Not just DeepSeek** — the extension speaks an **OpenAI-compatible API**, so set a custom model id + point `repoAgent.deepseek.baseUrl` at **OpenAI, OpenRouter, Gemini, or any provider** to run the agent on **GPT-4o, Claude, Llama, Qwen** and more.
+
+## 📖 Learn this codebase
+
+Run **Agent: Learn This Codebase** (or `/` → *Learn this codebase*) and it indexes your repo and writes a thorough **knowledge brief** — purpose, stack, architecture, key files, data models, conventions, build/run/test — to `.repo-agent/knowledge.md`. That brief is injected into **every** prompt, so the agent knows your project instantly. Re-run anytime to refresh.
 
 ## 👁️ Vision — paste an image, build the component
 
@@ -196,7 +242,7 @@ Open the **🧩 Plugins** panel (or type <kbd>/</kbd> → **Plugins**) and add t
 | 🧠 | **Memory** | A knowledge graph the agent reads/writes across tasks |
 | 🗺️ | **Google Maps** · 💬 **Slack** | Places/directions · channels & messages |
 
-> ➕ **Add any custom MCP server** from the same panel — just give it a command + args. Keys are stored securely in VS Code SecretStorage.
+> ➕ **Add any MCP server** — from **npm/GitHub** (paste `@scope/server` or `owner/repo`), a **custom command**, or a **remote URL** (hosted servers over Streamable HTTP, with an optional bearer token). Keys are stored securely in VS Code SecretStorage. **[Full guide → docs/PLUGINS.md](docs/PLUGINS.md)**
 
 ## 🧠 Project memory — `memory.md`
 
@@ -249,6 +295,7 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 | `Agent: Run Agent (autonomous)` | Run a task that edits files & runs commands |
 | `Agent: Review Staged Changes` / `Review Current File` | Pre-commit / file review |
 | `Agent: Create Review Guidelines` | Scaffold a `system-design.md` of review rules |
+| `Agent: Learn This Codebase` | Generate a persistent project knowledge brief |
 | `Agent: Edit Memory` | Edit the always-on `memory.md` |
 | `Agent: Choose Vision Provider` | Pick a vision backend (Gemini free / Ollama / …) |
 | `Agent: Reindex Repository` / `Explain Architecture` | Index & architecture tools |
@@ -261,11 +308,10 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 
 | Setting | Default | Description |
 |---|---|---|
-| `deepseek.model` | `deepseek-chat` | Model for generation & review |
-| `deepseek.reasoningModel` | `deepseek-reasoner` | Model used when **Think** is on |
-| `deepseek.showThinking` | `true` | Show reasoning by default |
-| `deepseek.baseUrl` | `https://api.deepseek.com` | API base URL (OpenAI-compatible) |
-| `deepseek.maxTokens` | `4096` | Max tokens per response |
+| `deepseek.model` | `deepseek-v4-flash` | Active model (switch it from the 🧠 footer chip) |
+| `effort` | `medium` | Speed vs. reasoning depth: low · medium · high · max |
+| `deepseek.baseUrl` | `https://api.deepseek.com` | API base URL — point at any OpenAI-compatible provider |
+| `deepseek.maxTokens` | `4096` | Max tokens per response (auto-raised for V4) |
 | `vision.baseUrl` / `vision.model` | Gemini free | OpenAI-compatible vision endpoint |
 | `review.guidelinesFile` | `system-design.md` | Your custom review-rules file |
 | `review.deepAudit` | `true` | Second audit pass for fewer false positives |
@@ -318,6 +364,6 @@ Found a bug or have an idea? **[Open an issue →](https://github.com/sumitsingh
 
 **MIT licensed**
 
-<sub>Free AI coding agent · AI coding assistant · GitHub Copilot alternative · free Copilot · Cursor alternative · Claude alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · MCP · Model Context Protocol · MCP client · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · project memory · repo indexing · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
+<sub>Free AI coding agent · AI coding assistant · AI agent for VS Code · agentic coding · vibe coding · GitHub Copilot alternative · free Copilot · Copilot Chat alternative · Cursor alternative · Claude alternative · Claude Code alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code / Kilo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · DeepSeek V4 · DeepSeek V4 Pro · DeepSeek V4 Flash · thinking mode · reasoning model · AI model switcher · switch AI model · OpenRouter · GPT-4o · use Claude in VS Code · MCP · Model Context Protocol · MCP client · remote MCP server · MCP plugins · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · learn codebase · project memory · repo indexing · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
 
 </div>
