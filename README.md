@@ -323,6 +323,19 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 
 </details>
 
+## 🔒 Privacy & security
+
+- **Your keys stay secret.** DeepSeek/vision keys and any plugin or remote‑MCP tokens live in VS Code **SecretStorage** — never in your code, settings, or the extension's storage, and never logged.
+- **No telemetry.** Zero analytics/tracking. The only network calls go to endpoints **you** configure — your AI provider, your vision provider, and any MCP servers you add. Your code/context is sent to *your* AI provider only when you make a request.
+- **The agent stays in your project.** File edits are blocked from absolute paths and `..` traversal; commands run in a **visible terminal with your approval**; edits show inline with **Keep / Undo**.
+- **Plugins run third‑party code** — add only servers you trust. Plugin tools **ask before running** by default (`plugins.autoRun` is off); enable it only for trusted plugins.
+- **Sensitive generated files?** `memory.md` and `.repo-agent/knowledge.md` are injected into prompts and committed by default — add them to `.gitignore` if private:
+  ```gitignore
+  .agent-cache/
+  .repo-agent/
+  memory.md
+  ```
+
 ## 🆚 vs Copilot, Cursor & Claude
 
 | | **Free Repo Agent** | Copilot | Cursor | Claude / Cline |
