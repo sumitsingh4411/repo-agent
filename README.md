@@ -15,6 +15,7 @@
 ![Vision](https://img.shields.io/badge/👁️_Screenshot_→_code-7c4dff?style=for-the-badge)
 ![MCP](https://img.shields.io/badge/🧩_MCP_plugins-1aa260?style=for-the-badge)
 ![Review](https://img.shields.io/badge/🔍_AI_code_review-ff6d00?style=for-the-badge)
+![CLI](https://img.shields.io/badge/⌨️_Terminal_CLI-222222?style=for-the-badge)
 
 <br/>
 
@@ -71,6 +72,7 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 </td>
 <td>
 
+- [⌨️ Terminal CLI](#%EF%B8%8F-terminal-cli--the-agent-in-your-shell)
 - [⚙️ Commands](#%EF%B8%8F-commands)
 - [🔧 Settings](#-settings)
 - [🆚 vs Copilot/Cursor/Claude](#-vs-copilot-cursor--claude)
@@ -148,8 +150,8 @@ One-click tools — **GitHub, web search, Postgres, Playwright, filesystem** & 2
 </td>
 <td width="50%" valign="top">
 
-### 🔍 Staff-engineer code review
-Reviews staged changes / files / branches, reads the **full files**, runs a **second audit pass**, and reports **Critical · Quality · Architecture · Testing**. Enforces **your own rules**.
+### ⌨️ Terminal CLI (like Claude Code)
+Prefer the shell? Run the **same autonomous agent in your terminal** — live checklist, file edits, command running, approvals — with no VS Code open. Ships with the extension.
 
 </td>
 </tr>
@@ -190,6 +192,49 @@ Describe a task and watch it work end-to-end:
 3. ▶️ Asks to **Run** any terminal command in a visible *Repo Agent* terminal.
 4. ✅ **Auto-verifies** — runs your typecheck/build and **fixes errors** before finishing.
 5. ☑️ A **live checklist** ticks each step `pending → in-progress → ✓ done`. Hit **Stop** anytime.
+
+## ⌨️ Terminal CLI — the agent in your shell
+
+Prefer working in the terminal, like **Claude Code**? The same agent runs as a CLI — **no VS Code needed**. It plans a live checklist, reads and edits files, and runs commands in your current directory, **asking before anything that changes them**.
+
+```
+◆ Repo Agent v0.10.0 · deepseek-v4-flash · medium effort
+
+› add a /health route and a test for it
+
+  ▶ Add the /health route
+  ○ Add a test
+  ○ Run the tests
+
+● Read  src/server.ts
+● Edit  src/server.ts
+  ✎ Edit src/server.ts
+    Approve? [y]es / [n]o / [a]lways:
+```
+
+**Setup** — the CLI ships **inside the extension** (v0.10.0 or later), so once Repo Agent is installed just point an alias at it:
+
+```bash
+# add to ~/.zshrc (or ~/.bashrc), then restart your terminal
+alias repo-agent='node "$(ls -dt ~/.vscode/extensions/sumitkumarsingh.free-repo-agent-*/dist/cli.js | head -1)"'
+```
+
+```bash
+export DEEPSEEK_API_KEY=sk-...      # or just run it and paste your key when asked
+
+repo-agent                          # interactive session in the current folder
+repo-agent "add a /health route"    # run one task, then keep going
+```
+
+| | |
+|---|---|
+| **Options** | `-m, --model <id>` · `-e, --effort low\|medium\|high\|max` · `-C, --cwd <dir>` · `--base-url <url>` (any OpenAI-compatible provider) · `-y, --yes` (auto-approve) · `--login` (re-enter your key) |
+| **In-session** | `/login` · `/model <id>` · `/effort <lvl>` · `/clear` · `/cwd` · `/help` · `/exit` |
+| **Controls** | Approve each change with `y` / `n` / `a`lways · **Ctrl-C** stops a run, again quits |
+
+> Your key comes from `DEEPSEEK_API_KEY` or `~/.repo-agent.json` (written `chmod 600`, only if you opt in). Pasted the wrong one? `repo-agent --login`.
+>
+> The CLI keeps its **own** key store — the extension's key lives in VS Code SecretStorage, which a program outside VS Code can't read.
 
 ## 🧠 Models & thinking mode — generate the best code
 
