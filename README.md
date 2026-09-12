@@ -109,7 +109,7 @@ After editing it runs your **typecheck/build**, reads the errors, and **fixes th
 <td width="50%" valign="top">
 
 ### 👁️ Vision (image → code)
-Paste a **UI screenshot/mockup** and say *"build this component."* **Free by default** via Google Gemini (or local Ollama). Falls back to OCR for screenshots of code/errors.
+Paste a **UI screenshot/mockup** and say *"build this component."* **Zero setup** — the default DeepSeek V4.1 Flash reads images with your existing key. Falls back to OCR for code/error screenshots.
 
 </td>
 </tr>
@@ -131,7 +131,7 @@ Reviews staged changes / files / branches, reads the **full files**, runs a **se
 <td width="50%" valign="top">
 
 ### 🧠 Model switcher + thinking mode
-Switch models from the footer, Claude-style: **DeepSeek V4 Pro / V4 Flash** with **thinking mode** (deep reasoning that works *with* tool calls), or point at **OpenAI / OpenRouter / Gemini** for GPT/Claude/Llama.
+Switch models from the footer, Claude-style: **DeepSeek V4.1 Flash / V4 Pro** with **thinking mode** (deep reasoning that works *with* tool calls), or point at **OpenAI / OpenRouter / Gemini** for GPT/Claude/Llama.
 
 </td>
 <td width="50%" valign="top">
@@ -198,7 +198,7 @@ Describe a task and watch it work end-to-end:
 Prefer working in the terminal, like **Claude Code**? The same agent runs as a CLI — **no VS Code needed**. It plans a live checklist, reads and edits files, and runs commands in your current directory, **asking before anything that changes them**.
 
 ```
-◆ Repo Agent v0.10.0 · deepseek-v4-flash · medium effort
+◆ Repo Agent v0.11.0 · deepseek-flash · medium effort
 
 › add a /health route and a test for it
 
@@ -242,8 +242,8 @@ Switch the model from the **🧠 chip in the chat footer** (or the ⚙︎ Option
 
 | Model | Best for |
 |---|---|
-| **DeepSeek V4 Pro** (`deepseek-v4-pro`) | Hardest code & reasoning — top quality |
-| **DeepSeek V4 Flash** (`deepseek-v4-flash`) | Fast & affordable, 1M context — the default |
+| **DeepSeek V4.1 Flash** (`deepseek-flash`) | **Newest & the default** — fast, cheap, 1M context, 384K output, and **reads images natively** |
+| **DeepSeek V4 Pro** (`deepseek-v4-pro`) | Hardest code & reasoning — top quality (text only) |
 | **R1 / V3** (`deepseek-reasoner` / `deepseek-chat`) | Legacy models |
 
 - **Thinking mode** — on the V4 models the agent uses DeepSeek's built-in **deep reasoning that works *with* tool calls**, so it thinks before it edits. It's wired to the **⚡ Effort** dial: off at *Low* (fast/cheap), then *low → high → max* reasoning at *Medium → High → Max*.
@@ -255,16 +255,19 @@ Run **Agent: Learn This Codebase** (or `/` → *Learn this codebase*) and it ind
 
 ## 👁️ Vision — paste an image, build the component
 
-DeepSeek is text-only, so image understanding uses a **separate, free-by-default** vision model.
+**Zero setup.** The default model — **DeepSeek V4.1 Flash** — is **natively multimodal**, so it reads images with the DeepSeek key you already have. One model, one key, nothing to configure.
+
+Just **paste a screenshot/mockup** into the chat and ask *"build this as a React component."* The image becomes a precise implementation spec, and the agent builds the files.
 
 ```text
-/  →  👁️ Vision  →  choose a provider:
-     • Google Gemini — FREE (no credit card)   ← default
+/  →  👁️ Vision  →  switch provider (optional):
+     • DeepSeek V4.1 Flash — same key, no setup   ← default
+     • Google Gemini — FREE (no credit card)
      • Ollama / LM Studio — local, no key
      • OpenRouter (free models) · OpenAI · Custom
 ```
 
-Then **paste a screenshot/mockup** into the chat and ask *"build this as a React component."* The vision model turns the image into a precise implementation spec, and the agent builds the files. No key? Images fall back to **OCR** — perfect for screenshots of errors or code.
+Vision off, or no key? Images fall back to **OCR** — perfect for screenshots of errors or code.
 
 ## 🧩 Plugins (MCP) — give the agent superpowers
 
@@ -353,11 +356,11 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 
 | Setting | Default | Description |
 |---|---|---|
-| `deepseek.model` | `deepseek-v4-flash` | Active model (switch it from the 🧠 footer chip) |
+| `deepseek.model` | `deepseek-flash` | Active model (switch it from the 🧠 footer chip) |
 | `effort` | `medium` | Speed vs. reasoning depth: low · medium · high · max |
 | `deepseek.baseUrl` | `https://api.deepseek.com` | API base URL — point at any OpenAI-compatible provider |
 | `deepseek.maxTokens` | `4096` | Max tokens per response (auto-raised for V4) |
-| `vision.baseUrl` / `vision.model` | Gemini free | OpenAI-compatible vision endpoint |
+| `vision.baseUrl` / `vision.model` | DeepSeek `deepseek-flash` | OpenAI-compatible vision endpoint (reuses your DeepSeek key) |
 | `review.guidelinesFile` | `system-design.md` | Your custom review-rules file |
 | `review.deepAudit` | `true` | Second audit pass for fewer false positives |
 | `indexing.maxFiles` | `1500` | Index size cap |
