@@ -4,14 +4,14 @@
 
 # Free Repo Agent
 
-### 🚀 The free AI coding agent for VS Code
+### 🚀 The free DeepSeek AI coding agent for VS Code
 
-**A no-subscription [GitHub Copilot](#-vs-copilot-cursor--claude) · Cursor · Claude alternative** — repo-aware chat, an autonomous agent that **edits files & runs commands**, a **DeepSeek V4 model switcher with thinking mode**, **vision (screenshot → component)**, **MCP plugins**, **project memory**, and **staff-engineer code review**. Bring your own key, pay only cents — or plug in **GPT / Claude / any model** via an OpenAI-compatible URL.
+**A no-subscription [GitHub Copilot](#-vs-copilot-cursor--claude) · Cursor · Claude Code alternative** — repo-aware chat, an autonomous agent that **edits files & runs commands**, a **DeepSeek V4.1 Flash / V4 Pro model switcher with thinking mode**, a **terminal CLI**, **vision (screenshot → component)**, **MCP plugins**, **project memory**, and **staff-engineer code review**. Bring your own key, pay only cents — or plug in **GPT / Claude / any model** via an OpenAI-compatible URL.
 
 <br/>
 
 ![Agent mode](https://img.shields.io/badge/🤖_Autonomous_agent-0b6cff?style=for-the-badge)
-![Models](https://img.shields.io/badge/🧠_DeepSeek_V4_+_thinking-4d6bfe?style=for-the-badge)
+![Models](https://img.shields.io/badge/🧠_DeepSeek_V4.1_+_thinking-4d6bfe?style=for-the-badge)
 ![Vision](https://img.shields.io/badge/👁️_Screenshot_→_code-7c4dff?style=for-the-badge)
 ![MCP](https://img.shields.io/badge/🧩_MCP_plugins-1aa260?style=for-the-badge)
 ![Review](https://img.shields.io/badge/🔍_AI_code_review-ff6d00?style=for-the-badge)
@@ -28,6 +28,7 @@
 <br/>
 
 [![Install in VS Code](https://img.shields.io/badge/⬇️_Install_in_VS_Code-0b6cff?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=SUMITKUMARSINGH.free-repo-agent)
+[![Install from Open VSX](https://img.shields.io/badge/⬇️_Cursor_·_Windsurf_·_VSCodium-Open_VSX-a60ee5?style=for-the-badge)](https://open-vsx.org/extension/SUMITKUMARSINGH/free-repo-agent)
 
 <sub>
 
@@ -45,7 +46,7 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 
 <div align="center">
 
-**Looking for a free Copilot alternative · Cursor alternative · Claude / ChatGPT coding agent · Cline / Continue / Aider alternative?** This is the lightweight, bring-your-own-key one.
+**Looking for a free Copilot alternative · Cursor alternative · Claude Code alternative · Cline / Roo Code / Kilo Code / Continue / Aider alternative · or the best DeepSeek extension for VS Code?** This is the lightweight, bring-your-own-key one.
 
 </div>
 
@@ -403,6 +404,11 @@ A free alternative to **GitHub Copilot, Cursor, Claude, Codex, Cline, Continue, 
 
 <details><summary><b>Is it really free?</b></summary><br/>Yes — the extension is free and open. You only pay DeepSeek's low pay-as-you-go API usage (your own key).</details>
 <details><summary><b>Is it a good Copilot / Cursor / Claude / Cline alternative?</b></summary><br/>Yes — repo-aware chat, an autonomous agent that edits files and runs commands, visible reasoning, vision, MCP plugins, and pre-commit code review — the same core workflow, no subscription.</details>
+<details><summary><b>Is there a free DeepSeek extension / DeepSeek agent for VS Code?</b></summary><br/>Yes — this is one. It's a full <b>DeepSeek coding agent</b> (not just chat): it edits files, runs commands, reads screenshots and reviews code, using your own DeepSeek API key.</details>
+<details><summary><b>How do I use DeepSeek V4.1 Flash in VS Code?</b></summary><br/>Install Free Repo Agent and run <b>Agent: Set DeepSeek API Key</b> — <b>DeepSeek V4.1 Flash (<code>deepseek-flash</code>) is the default</b>. Switch to <b>V4 Pro</b> from the 🧠 footer chip. Thinking mode is built in and follows the ⚡ Effort dial.</details>
+<details><summary><b>Is there a free Claude Code alternative that runs in the terminal?</b></summary><br/>Yes — the <b>terminal CLI</b> (<code>repo-agent</code>) runs the same autonomous agent in your shell: live checklist, file edits, commands, with approval before every change. See <a href="#️-terminal-cli--the-agent-in-your-shell">Terminal CLI</a>. It doubles as a lightweight <b>Aider alternative</b>.</details>
+<details><summary><b>Is it a Roo Code / Kilo Code / Cline alternative?</b></summary><br/>Yes — like them it's an in-editor agent that reads your repo, edits multiple files and runs commands, bring-your-own-key with no subscription, plus a live checklist, auto-verify/self-fix and a staff-engineer code reviewer.</details>
+<details><summary><b>Can I use it in Cursor, Windsurf or VSCodium?</b></summary><br/>It's published on <b><a href="https://open-vsx.org/extension/SUMITKUMARSINGH/free-repo-agent">Open VSX</a></b>, the registry Cursor, Windsurf and VSCodium install from — search <i>“Free Repo Agent”</i> in their Extensions view.</details>
 <details><summary><b>Does it fix its own mistakes?</b></summary><br/>Yes — after editing it runs your typecheck/build, reads the errors, and fixes them before finishing.</details>
 <details><summary><b>Can I add plugins / MCP servers?</b></summary><br/>Yes — open the 🧩 Plugins panel and add GitHub, web search, Postgres, Playwright and more with one click, or any custom MCP server (needs Node/npx).</details>
 <details><summary><b>Does my code leave my machine?</b></summary><br/>Only the context needed for a request is sent to the DeepSeek API when you ask. Your key never leaves SecretStorage; the index is cached locally under <code>.agent-cache/</code>.</details>
@@ -425,6 +431,6 @@ Found a bug or have an idea? **[Open an issue →](https://github.com/sumitsingh
 
 **MIT licensed**
 
-<sub>Free AI coding agent · AI coding assistant · AI agent for VS Code · agentic coding · vibe coding · GitHub Copilot alternative · free Copilot · Copilot Chat alternative · Cursor alternative · Claude alternative · Claude Code alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code / Kilo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · DeepSeek V4 · DeepSeek V4 Pro · DeepSeek V4 Flash · thinking mode · reasoning model · AI model switcher · switch AI model · OpenRouter · GPT-4o · use Claude in VS Code · MCP · Model Context Protocol · MCP client · remote MCP server · MCP plugins · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · learn codebase · project memory · repo indexing · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
+<sub>Free DeepSeek AI coding agent · DeepSeek extension for VS Code · DeepSeek agent · DeepSeek V4.1 Flash · DeepSeek V4 Pro · DeepSeek in Cursor · Open VSX AI agent · Claude Code alternative · Roo Code alternative · Kilo Code alternative · terminal AI coding agent · Free AI coding agent · AI coding assistant · AI agent for VS Code · agentic coding · vibe coding · GitHub Copilot alternative · free Copilot · Copilot Chat alternative · Cursor alternative · Claude alternative · Claude Code alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code / Kilo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · DeepSeek V4 · DeepSeek V4 Pro · DeepSeek V4 Flash · thinking mode · reasoning model · AI model switcher · switch AI model · OpenRouter · GPT-4o · use Claude in VS Code · MCP · Model Context Protocol · MCP client · remote MCP server · MCP plugins · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · learn codebase · project memory · repo indexing · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
 
 </div>
