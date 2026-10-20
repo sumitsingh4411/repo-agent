@@ -56,6 +56,7 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 <tr>
 <td>
 
+- [✨ What's new in 0.13](#-whats-new-in-013)
 - [✨ What's new in 0.12](#-whats-new-in-012)
 - [⚡ Everything it does](#-everything-it-does)
 - [🚀 Get started in 60 seconds](#-get-started-in-60-seconds)
@@ -85,13 +86,26 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 </tr>
 </table>
 
+## ✨ What's new in 0.13
+
+A redesigned chat, and agent output you can actually follow — like Claude Code:
+
+- **🟩 See every edit as a diff** — each file change shows **+N −M** and the changed lines, syntax-colored, with line numbers. New files say **Create**; long diffs fold.
+- **🔎 Reads and searches fold into one line** — *"Read 3 files, ran 2 searches"*. Click to see every file and search with its result (*"86 lines"*, *"14 matches in 6 files"*).
+- **✅ Commands show pass/fail** — a green **Done** or red **Exit 1** badge, a red step when something fails, and long output folded to the last lines (where the errors are).
+- **⏱️ Step timings and "Worked for 38s"** at the end of each run, with the total **+N −M** across changed files.
+- **📊 Tables, quotes and dividers** render properly in answers.
+- **🎨 A new look** — the run is drawn as one circuit trace with a hexagon node per step, a welcome screen with one-click starters, a rotating *"Reasoning… / Tracing the circuit…"* indicator with a timer, and **Copy** on every code block. Works in dark, light and high-contrast themes.
+- **⚡ Faster** — long answers stream without lag (~5× less render work), fewer model round trips (**9 → 4** on a small task), no duplicate type-checks, and a pre-warmed terminal.
+- **✍️ Autocomplete and 👁️ Vision are now on by default.**
+
 ## ✨ What's new in 0.12
 
 The biggest update yet — the features people compare coding agents on:
 
 - **📋 Plan mode** — the agent investigates read-only and proposes a step-by-step plan; click **▶ Execute plan** to run it.
 - **↺ Checkpoints** — hover any message and click **↺ Restore** to undo every file the agent changed since then and rewind the chat.
-- **✍️ Inline autocomplete** — grey suggestions as you type, **Tab** to accept (DeepSeek fill-in-the-middle). Off by default — turn it on from the status bar.
+- **✍️ Inline autocomplete** — grey suggestions as you type, **Tab** to accept (DeepSeek fill-in-the-middle). On by default since 0.13 — toggle it from the status bar.
 - **💡 Quick Fix & right-click** — **✨ Fix with Repo Agent** on any red squiggle; right-click code → Explain · Fix · Refactor · Write tests · Add docs.
 - **✨ AI commit messages** — a sparkle button in Source Control writes the message from your staged changes.
 - **🔎 Sharper agent** — exact **grep**, the **Problems** panel, **go-to-definition / find-references**, **web fetch**, and **parallel research subagents**. A loop guard stops it repeating itself.
@@ -205,7 +219,7 @@ Every message is a checkpoint. Click **↺ Restore** to put back every file the 
 <td width="50%" valign="top">
 
 ### ✍️ Inline autocomplete
-**Copilot-style grey suggestions** as you type, **Tab** to accept — DeepSeek fill-in-the-middle using the code before *and* after your cursor. Off by default; one click in the status bar.
+**Copilot-style grey suggestions** as you type, **Tab** to accept — DeepSeek fill-in-the-middle using the code before *and* after your cursor. On by default; one click in the status bar turns it off.
 
 </td>
 <td width="50%" valign="top">
@@ -265,7 +279,7 @@ Describe a task and watch it work end-to-end:
 | **💡 Quick Fix** | Cursor on a red/yellow squiggle → lightbulb → **✨ Fix with Repo Agent** or **Explain** |
 | **Right-click** | Select code → **Repo Agent** → Explain · Find & fix bugs · Refactor · Write tests · Add docs |
 | **✨ Commit message** | The sparkle in the Source Control title bar writes it from your staged diff, in your repo's style |
-| **✍️ Autocomplete** | Click **Autocomplete** in the status bar → grey suggestions, **Tab** to accept (each pause is a small API call) |
+| **✍️ Autocomplete** | On by default: grey suggestions, **Tab** to accept (each pause is a small API call). Click **Autocomplete** in the status bar to turn it off |
 | **@-mentions** | `@file` · `@problems` · `@diff` (uncommitted changes) · `@terminal` · `@https://…` (a web page) |
 | **Custom `/commands`** | Save a prompt as `.repo-agent/commands/review-pr.md` (share via git) or `~/.repo-agent/commands/`, then type `/review-pr …`. `$ARGUMENTS` = what you type after it |
 | **`AGENTS.md`** | The shared agent-instructions standard (Codex, Cursor, Claude Code) — read into every prompt, alongside `.claude.md` and `memory.md` |
@@ -457,7 +471,7 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 | `indexing.generateSummaries` | `true` | AI per-file summaries (set `false` for $0 indexing) |
 | `retrieval.maxFiles` | `8` | Relevant files injected per prompt |
 | `plugins.autoRun` | `false` | Run plugin tools without a confirm prompt (off = you confirm each third-party tool call) |
-| `autocomplete.enabled` | `false` | Inline autocomplete — each typing pause is a small API call |
+| `autocomplete.enabled` | `true` | Inline autocomplete — each typing pause is a small API call |
 | `autocomplete.delayMs` | `350` | Typing pause before a suggestion is requested |
 | `review.autoOnSave` | `false` | Auto-review files on save |
 
@@ -494,7 +508,7 @@ A free alternative to **GitHub Copilot, Cursor, Claude, Codex, Cline, Continue, 
 ## ❓ FAQ
 
 <details><summary><b>Is it really free?</b></summary><br/>Yes — the extension is free and open. You only pay DeepSeek's low pay-as-you-go API usage (your own key).</details>
-<details><summary><b>Does it have inline autocomplete like Copilot?</b></summary><br/>Yes — since 0.12. Grey suggestions appear as you pause typing and <b>Tab</b> accepts them, using DeepSeek's fill-in-the-middle model with the code before and after your cursor. It's off by default (each pause is a small API call); click <b>Autocomplete</b> in the status bar to turn it on.</details>
+<details><summary><b>Does it have inline autocomplete like Copilot?</b></summary><br/>Yes — since 0.12. Grey suggestions appear as you pause typing and <b>Tab</b> accepts them, using DeepSeek's fill-in-the-middle model with the code before and after your cursor. It's on by default since 0.13 (each pause is a small API call); click <b>Autocomplete</b> in the status bar to turn it off.</details>
 <details><summary><b>Can I undo what the agent did?</b></summary><br/>Yes. Each edit shows inline with <b>Keep / Undo</b>, and every message is a checkpoint: click <b>↺ Restore</b> on it to revert all files the agent changed since then and rewind the chat. You can also use <b>📋 Plan mode</b> to review a plan before anything changes.</details>
 <details><summary><b>Is it a good Copilot / Cursor / Claude / Cline alternative?</b></summary><br/>Yes — repo-aware chat, an autonomous agent that edits files and runs commands, visible reasoning, vision, MCP plugins, and pre-commit code review — the same core workflow, no subscription.</details>
 <details><summary><b>Is there a free DeepSeek extension / DeepSeek agent for VS Code?</b></summary><br/>Yes — this is one. It's a full <b>DeepSeek coding agent</b> (not just chat): it edits files, runs commands, reads screenshots and reviews code, using your own DeepSeek API key.</details>
