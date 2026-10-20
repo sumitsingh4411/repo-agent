@@ -56,6 +56,7 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 <tr>
 <td>
 
+- [✨ What's new in 0.12](#-whats-new-in-012)
 - [⚡ Everything it does](#-everything-it-does)
 - [🚀 Get started in 60 seconds](#-get-started-in-60-seconds)
 - [🧠 Models & thinking mode](#-models--thinking-mode--generate-the-best-code)
@@ -73,6 +74,7 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 </td>
 <td>
 
+- [🛠️ In your editor](#%EF%B8%8F-in-your-editor--power-tools)
 - [⌨️ Terminal CLI](#%EF%B8%8F-terminal-cli--the-agent-in-your-shell)
 - [⚙️ Commands](#%EF%B8%8F-commands)
 - [🔧 Settings](#-settings)
@@ -82,6 +84,21 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 </td>
 </tr>
 </table>
+
+## ✨ What's new in 0.12
+
+The biggest update yet — the features people compare coding agents on:
+
+- **📋 Plan mode** — the agent investigates read-only and proposes a step-by-step plan; click **▶ Execute plan** to run it.
+- **↺ Checkpoints** — hover any message and click **↺ Restore** to undo every file the agent changed since then and rewind the chat.
+- **✍️ Inline autocomplete** — grey suggestions as you type, **Tab** to accept (DeepSeek fill-in-the-middle). Off by default — turn it on from the status bar.
+- **💡 Quick Fix & right-click** — **✨ Fix with Repo Agent** on any red squiggle; right-click code → Explain · Fix · Refactor · Write tests · Add docs.
+- **✨ AI commit messages** — a sparkle button in Source Control writes the message from your staged changes.
+- **🔎 Sharper agent** — exact **grep**, the **Problems** panel, **go-to-definition / find-references**, **web fetch**, and **parallel research subagents**. A loop guard stops it repeating itself.
+- **⧉ Multiple chat tabs**, **`AGENTS.md`** support, new mentions **`@problems` `@diff` `@terminal` `@https://…`**, **custom `/commands`**, **hooks**, and **long-chat memory**.
+- **⌨️ CLI:** plugins (MCP, `.mcp.json`), `--image`, saved sessions (`--continue` / `--resume`), auto-verify and `--plan`.
+
+[Full changelog →](https://marketplace.visualstudio.com/items/SUMITKUMARSINGH.free-repo-agent/changelog)
 
 ## ⚡ Everything it does
 
@@ -170,6 +187,48 @@ Every reply has **Copy · 👍 · 👎**. A 👎 saves *what was wrong* as a rul
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📋 Plan mode
+Before a big change, the agent **investigates read-only** and returns what it found, a numbered plan naming every file, and open questions. Nothing changes until you click **▶ Execute plan**.
+
+</td>
+<td width="50%" valign="top">
+
+### ↺ Checkpoints & rewind
+Every message is a checkpoint. Click **↺ Restore** to put back every file the agent changed since then — files it created are deleted — and rewind the chat to that point.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### ✍️ Inline autocomplete
+**Copilot-style grey suggestions** as you type, **Tab** to accept — DeepSeek fill-in-the-middle using the code before *and* after your cursor. Off by default; one click in the status bar.
+
+</td>
+<td width="50%" valign="top">
+
+### 💡 Quick Fix, right-click & commits
+**✨ Fix with Repo Agent** on any red squiggle, right-click code → **Explain · Fix · Refactor · Tests · Docs**, and an **AI commit message** button in Source Control.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🔎 Precise search + subagents
+The agent **greps** exact text, reads the **Problems** panel, uses the language server for **definitions & references**, fetches docs pages, and fans out **parallel research subagents**.
+
+</td>
+<td width="50%" valign="top">
+
+### ⧉ Tabs, commands & hooks
+Run **several chats side by side**, save prompts as **custom `/commands`**, and run your own scripts before/after tool calls with **hooks**. Reads **`AGENTS.md`**.
+
+</td>
+</tr>
 </table>
 
 ## 🚀 Get started in 60 seconds
@@ -193,6 +252,31 @@ Describe a task and watch it work end-to-end:
 3. ▶️ Asks to **Run** any terminal command in a visible *Repo Agent* terminal.
 4. ✅ **Auto-verifies** — runs your typecheck/build and **fixes errors** before finishing.
 5. ☑️ A **live checklist** ticks each step `pending → in-progress → ✓ done`. Hit **Stop** anytime.
+
+- **📋 Plan first** — click the **📋 Plan** chip (or type `/plan`): it only reads and investigates, then proposes a plan. **▶ Execute plan** carries it out.
+- **↺ Rewind** — hover a message you sent → **↺ Restore** reverts every file the agent changed since then and puts your message back in the input. (Effects of shell commands, like installs, aren't undone.)
+- **⧉ Several at once** — **⧉ Tab** opens another independent chat, each with its own terminal.
+- **🧠 Long chats keep their memory** — older messages are summarized automatically; `/compact` does it now.
+
+## 🛠️ In your editor & power tools
+
+| | |
+|---|---|
+| **💡 Quick Fix** | Cursor on a red/yellow squiggle → lightbulb → **✨ Fix with Repo Agent** or **Explain** |
+| **Right-click** | Select code → **Repo Agent** → Explain · Find & fix bugs · Refactor · Write tests · Add docs |
+| **✨ Commit message** | The sparkle in the Source Control title bar writes it from your staged diff, in your repo's style |
+| **✍️ Autocomplete** | Click **Autocomplete** in the status bar → grey suggestions, **Tab** to accept (each pause is a small API call) |
+| **@-mentions** | `@file` · `@problems` · `@diff` (uncommitted changes) · `@terminal` · `@https://…` (a web page) |
+| **Custom `/commands`** | Save a prompt as `.repo-agent/commands/review-pr.md` (share via git) or `~/.repo-agent/commands/`, then type `/review-pr …`. `$ARGUMENTS` = what you type after it |
+| **`AGENTS.md`** | The shared agent-instructions standard (Codex, Cursor, Claude Code) — read into every prompt, alongside `.claude.md` and `memory.md` |
+
+**Hooks** — run your own scripts around the agent's tool calls with `.repo-agent/hooks.json`:
+
+```json
+{ "preToolUse": [{ "matcher": "write_file|edit_file", "command": "./scripts/guard-migrations.sh" }] }
+```
+
+Each hook gets the event as JSON on stdin; **exit code 2** blocks the call (stderr is told to the agent). Project hooks only run in a trusted workspace, after you approve that exact file.
 
 ## ⌨️ Terminal CLI — the agent in your shell
 
@@ -229,8 +313,9 @@ repo-agent "add a /health route"    # run one task, then keep going
 
 | | |
 |---|---|
-| **Options** | `-m, --model <id>` · `-e, --effort low\|medium\|high\|max` · `-C, --cwd <dir>` · `--base-url <url>` (any OpenAI-compatible provider) · `-y, --yes` (auto-approve) · `--login` (re-enter your key) |
-| **In-session** | `/login` · `/model <id>` · `/effort <lvl>` · `/clear` · `/cwd` · `/help` · `/exit` |
+| **Options** | `-m, --model <id>` · `-e, --effort low\|medium\|high\|max` · `-C, --cwd <dir>` · `--base-url <url>` (any OpenAI-compatible provider) · `-y, --yes` (auto-approve) · `--login` (re-enter your key) · `--plan` · `-i, --image <file>` · `-c, --continue` · `-r, --resume` · `--no-verify` |
+| **In-session** | `/plan` · `/image <file>` · `/resume` · `/mcp` · `/login` · `/model <id>` · `/effort <lvl>` · `/clear` · `/cwd` · `/help` · `/exit` |
+| **Plugins** | Add `"mcpServers"` to `~/.repo-agent.json` or a project `.mcp.json` — the same format as Claude Code & Cursor. Project servers are approved once; each plugin call is confirmed |
 | **Controls** | Approve each change with `y` / `n` / `a`lways · **Ctrl-C** stops a run, again quits |
 
 > Your key comes from `DEEPSEEK_API_KEY` or `~/.repo-agent.json` (written `chmod 600`, only if you opt in). Pasted the wrong one? `repo-agent --login`.
@@ -349,6 +434,10 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 | `Agent: Choose Vision Provider` | Pick a vision backend (Gemini free / Ollama / …) |
 | `Agent: Reindex Repository` / `Explain Architecture` | Index & architecture tools |
 | `Agent: Set / Clear DeepSeek API Key` | Manage your key |
+| `Agent: New Chat Tab` | Open another independent chat |
+| `Agent: Generate Commit Message` | Commit message from your staged changes (also ✨ in Source Control) |
+| `Agent: Toggle Inline Autocomplete` | Grey as-you-type suggestions on/off |
+| Right-click → **Repo Agent** → … | Explain / Fix / Refactor / Write tests / Add docs for the selection |
 
 ## 🔧 Settings
 
@@ -367,7 +456,9 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 | `indexing.maxFiles` | `1500` | Index size cap |
 | `indexing.generateSummaries` | `true` | AI per-file summaries (set `false` for $0 indexing) |
 | `retrieval.maxFiles` | `8` | Relevant files injected per prompt |
-| `plugins.autoRun` | `true` | Run plugin tools without a confirm prompt |
+| `plugins.autoRun` | `false` | Run plugin tools without a confirm prompt (off = you confirm each third-party tool call) |
+| `autocomplete.enabled` | `false` | Inline autocomplete — each typing pause is a small API call |
+| `autocomplete.delayMs` | `350` | Typing pause before a suggestion is requested |
 | `review.autoOnSave` | `false` | Auto-review files on save |
 
 </details>
@@ -403,6 +494,8 @@ A free alternative to **GitHub Copilot, Cursor, Claude, Codex, Cline, Continue, 
 ## ❓ FAQ
 
 <details><summary><b>Is it really free?</b></summary><br/>Yes — the extension is free and open. You only pay DeepSeek's low pay-as-you-go API usage (your own key).</details>
+<details><summary><b>Does it have inline autocomplete like Copilot?</b></summary><br/>Yes — since 0.12. Grey suggestions appear as you pause typing and <b>Tab</b> accepts them, using DeepSeek's fill-in-the-middle model with the code before and after your cursor. It's off by default (each pause is a small API call); click <b>Autocomplete</b> in the status bar to turn it on.</details>
+<details><summary><b>Can I undo what the agent did?</b></summary><br/>Yes. Each edit shows inline with <b>Keep / Undo</b>, and every message is a checkpoint: click <b>↺ Restore</b> on it to revert all files the agent changed since then and rewind the chat. You can also use <b>📋 Plan mode</b> to review a plan before anything changes.</details>
 <details><summary><b>Is it a good Copilot / Cursor / Claude / Cline alternative?</b></summary><br/>Yes — repo-aware chat, an autonomous agent that edits files and runs commands, visible reasoning, vision, MCP plugins, and pre-commit code review — the same core workflow, no subscription.</details>
 <details><summary><b>Is there a free DeepSeek extension / DeepSeek agent for VS Code?</b></summary><br/>Yes — this is one. It's a full <b>DeepSeek coding agent</b> (not just chat): it edits files, runs commands, reads screenshots and reviews code, using your own DeepSeek API key.</details>
 <details><summary><b>How do I use DeepSeek V4.1 Flash in VS Code?</b></summary><br/>Install Free Repo Agent and run <b>Agent: Set DeepSeek API Key</b> — <b>DeepSeek V4.1 Flash (<code>deepseek-flash</code>) is the default</b>. Switch to <b>V4 Pro</b> from the 🧠 footer chip. Thinking mode is built in and follows the ⚡ Effort dial.</details>
@@ -431,6 +524,6 @@ Found a bug or have an idea? **[Open an issue →](https://github.com/sumitsingh
 
 **MIT licensed**
 
-<sub>Free DeepSeek AI coding agent · DeepSeek extension for VS Code · DeepSeek agent · DeepSeek V4.1 Flash · DeepSeek V4 Pro · DeepSeek in Cursor · Open VSX AI agent · Claude Code alternative · Roo Code alternative · Kilo Code alternative · terminal AI coding agent · Free AI coding agent · AI coding assistant · AI agent for VS Code · agentic coding · vibe coding · GitHub Copilot alternative · free Copilot · Copilot Chat alternative · Cursor alternative · Claude alternative · Claude Code alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code / Kilo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · DeepSeek V4 · DeepSeek V4 Pro · DeepSeek V4 Flash · thinking mode · reasoning model · AI model switcher · switch AI model · OpenRouter · GPT-4o · use Claude in VS Code · MCP · Model Context Protocol · MCP client · remote MCP server · MCP plugins · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · learn codebase · project memory · repo indexing · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
+<sub>Free DeepSeek AI coding agent · free AI autocomplete · Copilot autocomplete alternative · AI plan mode · AI coding checkpoints · AI commit message generator · AGENTS.md · DeepSeek extension for VS Code · DeepSeek agent · DeepSeek V4.1 Flash · DeepSeek V4 Pro · DeepSeek in Cursor · Open VSX AI agent · Claude Code alternative · Roo Code alternative · Kilo Code alternative · terminal AI coding agent · Free AI coding agent · AI coding assistant · AI agent for VS Code · agentic coding · vibe coding · GitHub Copilot alternative · free Copilot · Copilot Chat alternative · Cursor alternative · Claude alternative · Claude Code alternative · Codex alternative · Cline / Continue / Codeium / Windsurf / Tabnine / Cody / Aider / Roo Code / Kilo Code alternative · ChatGPT for VS Code · DeepSeek VS Code extension · DeepSeek Coder · DeepSeek V4 · DeepSeek V4 Pro · DeepSeek V4 Flash · thinking mode · reasoning model · AI model switcher · switch AI model · OpenRouter · GPT-4o · use Claude in VS Code · MCP · Model Context Protocol · MCP client · remote MCP server · MCP plugins · AI code review · AI code reviewer · custom review rules · vision AI coding · screenshot to code · image to code · UI to code · AI pair programming · agent mode · autonomous coding agent · self-verifying AI agent · learn codebase · project memory · repo indexing · AI refactoring · AI code generation · repo-aware AI assistant · bring your own key AI.</sub>
 
 </div>
