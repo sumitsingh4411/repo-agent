@@ -40,6 +40,14 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 
 </div>
 
+<div align="center">
+
+![Free Repo Agent in VS Code: the DeepSeek AI coding agent reads the code, edits LoginForm.tsx with a +7 −2 diff, runs the typecheck (passed) and finishes with Keep all / Undo all](https://raw.githubusercontent.com/sumitsingh4411/repo-agent/main/media/demo.gif)
+
+<sub>One real-time agent run: it reads the code, shows every edit as a diff, runs your typecheck, and leaves the changes for you to keep or undo.</sub>
+
+</div>
+
 ---
 
 > **Free Repo Agent** brings a Claude/Cursor/Cline-style **agent** into VS Code. It indexes your whole repository, writes and edits code with inline **Keep / Undo**, runs terminal commands with your approval, **verifies its own work** (typecheck/build → then fixes the errors), lets you **switch models** (DeepSeek **V4 Pro / V4 Flash** with **thinking mode**, or any OpenAI-compatible model), tunes **effort** (fast → max reasoning), **reads images** (paste a UI → build the component), extends itself with **MCP plugins (local & remote)**, learns your codebase, remembers your project, and runs a **staff-engineer pre-commit code review** — all on the affordable DeepSeek API with **no monthly subscription**.
@@ -56,6 +64,7 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 <tr>
 <td>
 
+- [✨ What's new in 0.14](#-whats-new-in-014)
 - [✨ What's new in 0.13](#-whats-new-in-013)
 - [✨ What's new in 0.12](#-whats-new-in-012)
 - [⚡ Everything it does](#-everything-it-does)
@@ -85,6 +94,18 @@ Built with [![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visuals
 </td>
 </tr>
 </table>
+
+## ✨ What's new in 0.14
+
+A sturdier agent, and a smoother first five minutes:
+
+- **🛡️ It doesn't give up when DeepSeek is busy.** "Server overloaded", rate limits and network blips are retried automatically, and you see *"DeepSeek is busy, retrying in 4s…"* instead of a failed task.
+- **✂️ No more stuck runs.** Replies cut off at the output limit are handled (no half-written files), commands that never finish are stopped after 2 minutes, and running out of steps ends with a summary of what's done and what's left.
+- **🔎 Sees more, breaks less.** Large files are read in full (2,000 lines at a time), every edit shows the changed lines, errors in the files it just edited come back automatically, and it won't edit on top of changes you made while it was working.
+- **⚡ Faster on long tasks.** Several lookups run side by side, old file reads are trimmed from long runs, and follow-up messages reuse DeepSeek's prompt cache.
+- **⌨️ `repo-agent` in every VS Code terminal** — nothing to install, not even Node.
+- **🔑 Connect DeepSeek right from the chat** — paste your key on the welcome screen and it's checked on the spot.
+- **🧭 Getting Started guide** — `Agent: Getting Started` walks you through your key, your first task, plan mode, autocomplete and the CLI.
 
 ## ✨ What's new in 0.13
 
@@ -249,7 +270,7 @@ Run **several chats side by side**, save prompts as **custom `/commands`**, and 
 
 **1. Get a DeepSeek API key** → [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) — pay-as-you-go, a few dollars lasts a long time.
 
-**2. Add it to VS Code** → <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> → **`Agent: Set DeepSeek API Key`** (stored in VS Code SecretStorage, never in your repo).
+**2. Add it to VS Code** → open the chat and click **Paste API key** on the welcome screen (it's checked with DeepSeek right away), or run **`Agent: Set DeepSeek API Key`**. It's stored in VS Code SecretStorage, never in your repo. **`Agent: Getting Started`** walks you through the rest.
 
 **3. Open chat** → press <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>, or click the **Repo Agent `</>` icon** to dock it beside your code — and start.
 
@@ -311,12 +332,7 @@ Prefer working in the terminal, like **Claude Code**? The same agent runs as a C
     Approve? [y]es / [n]o / [a]lways:
 ```
 
-**Setup** — the CLI ships **inside the extension** (v0.10.0 or later), so once Repo Agent is installed just point an alias at it:
-
-```bash
-# add to ~/.zshrc (or ~/.bashrc), then restart your terminal
-alias repo-agent='node "$(ls -dt ~/.vscode/extensions/sumitkumarsingh.free-repo-agent-*/dist/cli.js | head -1)"'
-```
+**Setup — nothing to install.** Since v0.14, open a **new VS Code terminal** and type `repo-agent`: the extension puts it on the terminal's PATH and runs it on VS Code's built-in runtime, so you don't even need Node. For other terminals (iTerm, Windows Terminal…), run **`Agent: Use repo-agent in Other Terminals`** — it gives you a one-line alias to paste into your shell profile.
 
 ```bash
 export DEEPSEEK_API_KEY=sk-...      # or just run it and paste your key when asked
@@ -451,6 +467,8 @@ On first run, Repo Agent **indexes your repository** — symbols, structure, and
 | `Agent: New Chat Tab` | Open another independent chat |
 | `Agent: Generate Commit Message` | Commit message from your staged changes (also ✨ in Source Control) |
 | `Agent: Toggle Inline Autocomplete` | Grey as-you-type suggestions on/off |
+| `Agent: Getting Started` | Step-by-step guide: key, first task, plan mode, autocomplete, CLI |
+| `Agent: Use repo-agent in Other Terminals` | `repo-agent` already works in VS Code terminals; this gives you an alias for any other terminal |
 | Right-click → **Repo Agent** → … | Explain / Fix / Refactor / Write tests / Add docs for the selection |
 
 ## 🔧 Settings
